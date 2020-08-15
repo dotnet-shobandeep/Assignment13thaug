@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="julDotNetBatch2020" Class="EmployeeDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=julDotNetBatch2020;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="julDotNetBatch2020ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EmployeeTb1" Member="EmployeeTb1s">
+    <Type Name="EmployeeTb1">
+      <Column Name="empId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="empName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="empSal" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_delEmp" Method="sp_delEmp">
+    <Parameter Name="empid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_searchEmp" Method="sp_searchEmp">
+    <Parameter Name="empid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_searchEmpResult">
+      <Column Name="empName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="empSal" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
